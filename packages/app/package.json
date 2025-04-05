@@ -1,0 +1,7 @@
+{
+  "name": "@packages/app",
+  "description": "React app common for Web and Desktop",
+  "dependencies": {
+    "react": "^19.1.0"
+  }
+}

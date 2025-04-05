@@ -17,11 +17,14 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
+      "@packages/app/*": [ "packages/app/src/*" ],
+      "@packages/web/*": [ "packages/web/src/*" ],
+      "@packages/desktop-ui/*": [ "packages/desktop-ui/src/*" ],
+      "@packages/desktop/*": [ "packages/desktop/src/*" ],
+      "@packages/types/*": [ "packages/types/src/*" ],
+      "@packages/components/*": [ "packages/components/src/*" ]
+    }
   },
-  "include": ["src", "electron"],
+  "include": ["packages"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

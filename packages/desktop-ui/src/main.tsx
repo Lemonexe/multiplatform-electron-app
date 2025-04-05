@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { DesktopApp } from '@/DesktopApp';
+import { DesktopApp } from './DesktopApp';
 
 // If you want to use Node.js, the`nodeIntegration` needs to be enabled in the Main process.
 // import './nodeDemo'

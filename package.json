@@ -1,25 +1,20 @@
 {
   "name": "multiplatform-electron-app",
   "packageManager": "yarn@4.8.1",
-  "version": "1.0.0",
   "description": "Multiplatform Web/Electron app example",
-  "main": "dist-electron/main.js",
   "author": "Jiri Zbytovsky>",
   "license": "MIT",
   "private": true,
-  "debug": {
-    "env": {
-      "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777/"
-    }
-  },
-  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev:web": "vite",
-    "dev:desktop": "vite",
-    "build:web": "tsc && vite build && electron-builder",
-    "build:desktop": "tsc && vite build && electron-builder",
+    "dev:web": "yarn workspace @packages/web dev",
+    "dev:desktop": "yarn workspace @packages/desktop dev",
+    "build:web": "yarn workspace @packages/web build",
+    "build:desktop": "yarn workspace @packages/desktop build",
     "tsc": "tsc",
-    "prettier": "prettier --write \"src/**/*.{js,ts,mjs,cjs,jsx,tsx}\" \"electron/**/*.{js,ts,mjs,cjs,jsx,tsx}\""
+    "prettier": "prettier --write \"packages/**/*.{js,ts,mjs,cjs,jsx,tsx}\""
   },
   "dependencies": {
     "react": "^19.1.0",

@@ -1,7 +1,7 @@
-import { Card } from '@/Card';
-import logoElectron from '@/assets/logo-electron.svg';
-import { UpdateControls } from '@/UpdateControls';
-import { App } from '@/App';
+import { Card } from '@packages/components/Card';
+import logoElectron from './assets/logo-electron.svg';
+import { UpdateControls } from './UpdateControls';
+import { App } from '@packages/app/App';
 
 export const DesktopApp = () => {
     return (

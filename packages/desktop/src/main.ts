@@ -2,9 +2,7 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// The built directory structure
+// The built directory structure:
 //
 // ├─┬ dist-electron
 // │ ├── main.js       > Electron-Main
@@ -12,6 +10,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ├─┬ dist
 // │ └── index.html    > Electron-Renderer entry point
 //
+// To explain: packages/desktop/package.json expects the entry point: dist-electron/main.js
+// That is the path where vite builds Electron Main bundle. Therefore,
+// __dirname = packages/desktop/dist-electron/
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 process.env.APP_ROOT = path.join(__dirname, '..');
 export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-electron');
 export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist');
@@ -58,9 +60,9 @@ async function createWindow() {
     });
 
     ipcMain.handle('is-desktop-update-available', async () => {
-        await new Promise((resolve) => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, 700));
         mockedAvailableMinorVersionForUpdate += 1;
-        return `1.0.${mockedAvailableMinorVersionForUpdate}`;
+        return `1.1.${mockedAvailableMinorVersionForUpdate}`;
     });
 }
 

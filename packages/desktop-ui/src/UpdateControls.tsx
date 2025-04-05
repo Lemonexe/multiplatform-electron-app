@@ -6,9 +6,11 @@ export const UpdateControls = () => {
 
     const checkForUpdates = async () => {
         setCheckingInProgress(true);
+        const timeoutToCancel = setTimeout(() => setCheckingInProgress(false), 1500);
         const latestVersion = await window.ipcRenderer.isDesktopUpdateAvailable();
         setAvailableUpdate(latestVersion);
         setCheckingInProgress(false);
+        clearTimeout(timeoutToCancel);
     };
 
     return (

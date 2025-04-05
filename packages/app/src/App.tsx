@@ -1,6 +1,6 @@
 import logoVite from './assets/logo-vite.svg';
 import logoReact from './assets/logo-react.svg';
-import { Card } from '@/Card';
+import { Card } from '@packages/components/Card';
 
 export const App = () => (
     <Card>
