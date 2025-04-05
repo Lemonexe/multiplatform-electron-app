@@ -1,4 +1,7 @@
 {
   "name": "@packages/types",
-  "description": "Common types"
+  "description": "Common types",
+  "dependencies": {
+    "react": "^19.1.0"
+  }
 }

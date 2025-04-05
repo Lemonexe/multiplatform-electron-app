@@ -726,6 +726,8 @@ __metadata:
 "@packages/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@packages/types@workspace:packages/types"
+  dependencies:
+    react: "npm:^19.1.0"
   languageName: unknown
   linkType: soft
 
