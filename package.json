@@ -2,7 +2,7 @@
   "name": "multiplatform-electron-app",
   "packageManager": "yarn@4.8.1",
   "description": "Multiplatform Web/Electron app example",
-  "author": "Jiri Zbytovsky>",
+  "author": "Jiri Zbytovsky",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -16,20 +16,10 @@
     "tsc": "tsc",
     "prettier": "prettier --write \"packages/**/*.{js,ts,mjs,cjs,jsx,tsx}\""
   },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
   "devDependencies": {
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
-    "@vitejs/plugin-react": "^4.3.4",
-    "electron": "^35.1.4",
-    "electron-builder": "^26.0.12",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3",
-    "vite": "^6.2.5",
-    "vite-plugin-electron": "^0.29.0",
-    "vite-plugin-electron-renderer": "^0.14.6"
+    "typescript": "^5.8.3"
   }
 }

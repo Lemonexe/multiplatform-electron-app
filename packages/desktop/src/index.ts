@@ -5,12 +5,12 @@ import path from 'node:path';
 // The built directory structure:
 //
 // ├─┬ dist-electron
-// │ ├── main.js       > Electron-Main
+// │ ├── index.js      > Electron-Main
 // │ └── preload.js    > Preload-Scripts
 // ├─┬ dist
 // │ └── index.html    > Electron-Renderer entry point
 //
-// To explain: packages/desktop/package.json expects the entry point: dist-electron/main.js
+// To explain: packages/desktop/package.json expects the entry point: dist-electron/index.js
 // That is the path where vite builds Electron Main bundle. Therefore,
 // __dirname = packages/desktop/dist-electron/
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

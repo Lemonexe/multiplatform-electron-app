@@ -9,7 +9,7 @@ import renderer from 'vite-plugin-electron-renderer';
 // This is a workaround to keep renderer and main+preload separated:
 const rendererRoot = path.resolve('../desktop-ui');
 const mainRoot = path.relative(rendererRoot, '../desktop/src');
-const mainEntryPoint = path.join(mainRoot, 'main.ts');
+const mainEntryPoint = path.join(mainRoot, 'index.ts');
 const preloadEntryPoint = path.join(mainRoot, 'preload.ts');
 
 const rendererOutDir = path.relative(rendererRoot, '../desktop/dist');
@@ -26,6 +26,7 @@ export default defineConfig({
     },
     root: rendererRoot,
     build: {
+        emptyOutDir: true,
         outDir: rendererOutDir,
         minify: false,
     },

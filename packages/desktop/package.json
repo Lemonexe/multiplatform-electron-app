@@ -1,7 +1,8 @@
 {
   "name": "@packages/desktop",
+  "author": "Jiri Zbytovsky",
   "version": "1.0.0",
-  "main": "dist-electron/main.js",
+  "main": "dist-electron/index.js",
   "type": "module",
   "description": "Desktop app main",
   "scripts": {
@@ -10,7 +11,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "electron": "^35.1.4",
+    "electron": "35.1.4",
     "electron-builder": "^26.0.12",
     "vite": "^6.2.5",
     "vite-plugin-electron": "^0.29.0",
