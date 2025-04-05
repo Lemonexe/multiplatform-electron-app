@@ -1,9 +1,10 @@
 {
   "name": "@packages/web",
   "description": "Web app",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "echo todo dev",
-    "build": "echo todobuild"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "react": "^19.1.0",
