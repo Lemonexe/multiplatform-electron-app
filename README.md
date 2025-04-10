@@ -16,7 +16,7 @@ The project is a monorepo of several `yarn` workspaces for clear separation of w
 
 ## Setup
 ```
-yarn i
+yarn
 ```
 
 ## Run dev server
