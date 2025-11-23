@@ -2,8 +2,9 @@ import { useMemo, useState } from 'react';
 import { Card } from '@packages/components/Card';
 import logoElectron from './assets/logo-electron.svg';
 import { UpdateControls } from './UpdateControls';
-import { App } from '@packages/app/App';
+import { MainContent } from '@packages/app/MainContent.tsx';
 import { AppStateContext } from '@packages/components/AppStateContext';
+import { Layout } from '@packages/app/Layout.tsx';
 
 export const DesktopApp = () => {
     const [counter, setCounter] = useState(0);
@@ -16,16 +17,18 @@ export const DesktopApp = () => {
 
     return (
         <AppStateContext.Provider value={providerData}>
-            <Card style={{ marginBottom: '1rem' }}>
-                <img src={logoElectron} width="100px" height="100px" />
+            <Layout>
+                <MainContent />
 
-                <div>
-                    <h2>DesktopApp.tsx</h2>
-                    <UpdateControls />
-                </div>
-            </Card>
+                <Card>
+                    <img src={logoElectron} width="100px" height="100px" />
 
-            <App />
+                    <div>
+                        <h2>DesktopApp.tsx</h2>
+                        <UpdateControls />
+                    </div>
+                </Card>
+            </Layout>
         </AppStateContext.Provider>
     );
 };
