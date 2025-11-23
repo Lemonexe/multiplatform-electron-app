@@ -10,11 +10,9 @@
     "build": "vite build && electron-builder --publish never"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "electron": "35.1.4",
-    "electron-builder": "^26.0.12",
-    "vite": "^6.2.5",
-    "vite-plugin-electron": "^0.29.0",
-    "vite-plugin-electron-renderer": "^0.14.6"
+    "@vitejs/plugin-react": "^5.1.1",
+    "electron": "39.2.3",
+    "electron-builder": "26.0.12",
+    "vite": "^7.2.4"
   }
 }
