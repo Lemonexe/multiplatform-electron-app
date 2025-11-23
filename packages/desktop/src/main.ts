@@ -4,19 +4,19 @@ import path from 'node:path';
 
 // The built directory structure:
 //
-// ├─┬ dist-electron
-// │ ├── index.js      > Electron-Main
-// │ └── preload.js    > Preload-Scripts
-// ├─┬ dist
-// │ └── index.html    > Electron-Renderer entry point
+// ├─┬ dist-main
+// │ ├── main.js       (Electron-main)
+// │ └── preload.cjs   (Electron-preload)
+// ├─┬ dist-renderer
+// │ └── index.html    (Electron-renderer entry point)
 //
-// To explain: packages/desktop/package.json expects the entry point: dist-electron/index.js
+// To explain: packages/desktop/package.json expects the entry point: dist-main/main.js
 // That is the path where vite builds Electron Main bundle. Therefore,
-// __dirname = packages/desktop/dist-electron/
+// __dirname = packages/desktop/dist-main/
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 process.env.APP_ROOT = path.join(__dirname, '..');
-export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-electron');
-export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist');
+export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-main');
+export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist-renderer');
 export const VITE_DEV_SERVER_URL = process.env.VITE_DEV_SERVER_URL;
 
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST;
@@ -36,7 +36,7 @@ async function createWindow() {
         title: 'Main window',
         icon: path.join(process.env.VITE_PUBLIC, 'favicon.ico'),
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, 'preload.cjs'),
             // Warning: Enabling nodeIntegration and disabling contextIsolation is not secure in production
             // nodeIntegration: true,
             // contextIsolation: false,

@@ -28,8 +28,6 @@ export const UpdateControls = () => {
             {availableUpdate ? (
                 <p>
                     <b>{availableUpdate}</b> available for download! 🚀
-                    <br />
-                    todo implement UpdateNowButton...
                 </p>
             ) : null}
         </div>

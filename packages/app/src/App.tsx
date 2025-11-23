@@ -13,8 +13,8 @@ export const App = () => (
             <h2>App.tsx (the common part)</h2>
             <p>
                 Built using the{' '}
-                <a href="https://github.com/electron-vite/electron-vite-react" target="_blank">
-                    electron-vite-react
+                <a href="https://github.com/cawa-93/vite-electron-builder/" target="_blank">
+                    vite-electron-builder
                 </a>{' '}
                 template, check it out!
             </p>

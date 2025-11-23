@@ -4,11 +4,11 @@
   "productName": "MultiplatformElectronApp",
   "asar": true,
   "directories": {
-    "output": "release"
+    "output": "dist-electron"
   },
   "files": [
-    "dist-electron/**",
-    "dist/**"
+    "dist-main/**",
+    "dist-renderer/**"
   ],
   "mac": {
     "artifactName": "${productName}_${version}.${ext}",

@@ -1,21 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    // Module resolution & environment
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+
+    // Input/Output
+    "noEmit": true,
+    "baseUrl": "./",
+
+    // Language & checking features
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./",
+    "strict": true,
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noUncheckedSideEffectImports": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Internal packages aliases
     "paths": {
       "@packages/app/*": [ "packages/app/src/*" ],
       "@packages/web/*": [ "packages/web/src/*" ],
@@ -23,8 +35,7 @@
       "@packages/desktop/*": [ "packages/desktop/src/*" ],
       "@packages/types/*": [ "packages/types/src/*" ],
       "@packages/components/*": [ "packages/components/src/*" ]
-    }
+    },
   },
-  "include": ["packages"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["packages"]
 }

@@ -2,12 +2,16 @@
   "name": "@packages/desktop",
   "author": "Jiri Zbytovsky",
   "version": "1.0.0",
-  "main": "dist-electron/index.js",
+  "main": "dist-main/main.js",
   "type": "module",
   "description": "Desktop app main",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && electron-builder --publish never"
+    "dev": "node src/dev.js",
+    "build": "npm run build:vite-main && npm run build:vite-renderer && npm run build:electron",
+    "build:vite-main": "vite build --config vite.config.main.ts && vite build --config vite.config.preload.ts",
+    "build:vite-renderer": "vite build --config vite.config.renderer.ts",
+    "build:electron": "electron-builder",
+    "build:electron-portable": "electron-builder --dir"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.1",
