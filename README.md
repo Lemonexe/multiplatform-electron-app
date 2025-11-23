@@ -1,10 +1,14 @@
 # Multiplatform Web/Electron app example
 
 Example Electron app built using TypeScript, Vite and React.  
-It can be built both as an Electron desktop app as well as SPA for web deployment (limited functionality).  
-Note that this is **not** a template, only a demo app.
+It can be built both as an Electron desktop app as well as SPA for web deployment.  
 
-The project is a monorepo of several `yarn` workspaces for clear separation of web-only, desktop-only and common code:
+Note that this is **not** a template, only a demo app.  
+See [vite-electron-builder](https://github.com/cawa-93/vite-electron-builder/), I think it's the best batteries-included boilerplate template with Vite 🚀
+
+## Structure
+
+Monorepo of several `yarn` workspaces for clear separation of web-only, desktop-only and common code:
 - [app](packages/app) – the common React app wrapped by `web` and `desktop-ui`
 - [web](packages/web) – Web React app incl. build & dev server script 
 - [desktop-ui](packages/desktop-ui) – Electron renderer React app
