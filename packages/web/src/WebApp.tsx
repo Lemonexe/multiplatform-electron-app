@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Card } from '@packages/components/Card';
-import { MainContent } from '@packages/app/MainContent.tsx';
+import { App } from '@packages/app/App.tsx';
 import { AppStateContext } from '@packages/components/AppStateContext';
 import { Layout } from '@packages/app/Layout.tsx';
 
@@ -12,7 +12,7 @@ export const WebApp = () => {
     return (
         <AppStateContext.Provider value={providerData}>
             <Layout>
-                <MainContent />
+                <App />
 
                 <Card style={{ marginBottom: '1rem' }}>
                     <div>

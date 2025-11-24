@@ -4,14 +4,14 @@ import { Card } from '@packages/components/Card';
 import { Counter } from './Counter.tsx';
 import './style.css';
 
-export const MainContent = () => (
+export const App = () => (
     <Card>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <img src={logoVite} width="80px" height="80px" />
-            <img src={logoReact} width="80px" height="80px" />
+            <img src={logoVite} width="80px" height="80px" alt="vite" />
+            <img src={logoReact} width="80px" height="80px" alt="react" />
         </div>
         <div style={{ padding: '1rem' }}>
-            <h2>MainContent.tsx</h2>
+            <h2>App.tsx</h2>
             <p>
                 This is the common part, shared between Desktop &amp; Web.
                 <br />

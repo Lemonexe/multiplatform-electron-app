@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Card } from '@packages/components/Card';
 import logoElectron from './assets/logo-electron.svg';
 import { UpdateControls } from './UpdateControls';
-import { MainContent } from '@packages/app/MainContent.tsx';
+import { App } from '@packages/app/App.tsx';
 import { AppStateContext } from '@packages/components/AppStateContext';
 import { Layout } from '@packages/app/Layout.tsx';
 
@@ -18,10 +18,10 @@ export const DesktopApp = () => {
     return (
         <AppStateContext.Provider value={providerData}>
             <Layout>
-                <MainContent />
+                <App />
 
                 <Card>
-                    <img src={logoElectron} width="100px" height="100px" />
+                    <img src={logoElectron} width="100px" height="100px" alt="electron" />
 
                     <div>
                         <h2>DesktopApp.tsx</h2>
