@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, shell } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -43,28 +43,14 @@ async function createWindow() {
             preload: path.join(__dirname, 'preload.cjs'),
             // nodeIntegration: true,
             // contextIsolation: false,
-            /*
-             WARNING: Enabling nodeIntegration and disabling contextIsolation is not secure in production!
-             nodeIntegration exposes Node.js API to renderer (XSS danger).
-             contextIsolation shares scope of preload script with renderer.
-             By default, you can only pass variables from preload to renderer via contextBridge.exposeInMainWorld.
-             Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
-            */
         },
     });
 
     if (VITE_DEV_SERVER_URL) {
         browserWindow.loadURL(VITE_DEV_SERVER_URL);
-        browserWindow.webContents.openDevTools();
     } else {
         browserWindow.loadFile(indexHtmlPath);
     }
-
-    // Make all links open with the browser, not with the "in-app" browser window (actually just an instance of Electron's Chromium).
-    browserWindow.webContents.setWindowOpenHandler(({ url }) => {
-        if (url.startsWith('https:')) shell.openExternal(url);
-        return { action: 'deny' };
-    });
 
     // Custom Desktop IPC API for demo
     ipcMain.handle('is-desktop-update-available', async () => {
@@ -76,24 +62,10 @@ async function createWindow() {
 
 app.whenReady().then(createWindow);
 
-app.on('window-all-closed', () => {
-    browserWindow = null;
-    if (process.platform !== 'darwin') app.quit();
-});
-
 app.on('second-instance', () => {
     if (browserWindow) {
         // Focus on the main window if the user tried to open another
         if (browserWindow.isMinimized()) browserWindow.restore();
         browserWindow.focus();
-    }
-});
-
-app.on('activate', () => {
-    const allWindows = BrowserWindow.getAllWindows();
-    if (allWindows.length) {
-        allWindows[0].focus();
-    } else {
-        createWindow();
     }
 });
